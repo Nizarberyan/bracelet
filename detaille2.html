@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="detaill.css">
+</head>
+<body>
+    
+    <nav>
+        <img src="img/logo.png" alt="Logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="customize-btn">Customize Bracelet</button>
+        <i class="fas fa-bars menu-icon"></i>
+    </nav>
+
+    <div class="mobile-menu">
+        <img src="img/logo.png" alt="Logo" class="logo">
+        <i class="fas fa-times close-menu"></i>
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <button class="customize-btn">Customize Bracelet</button>
+        </ul>
+
+    </div>
+    <div class="product-container">
+        <div class="product-image">
+            <img src="img/detaille2.jpg" alt="Premium Product">
+        </div>
+
+        <div class="product-details">
+            <h1 class="product-title">Collier Clover</h1>
+
+            <div class="price-container">
+                <span class="current-price">149DH</span>
+                <span class="original-price">200DH</span>
+                <span class="discount-badge">-25%</span>
+            </div>
+
+            <p class="description">
+                Experience unparalleled quality with our premium product. Crafted with precision and designed for
+                excellence, this product combines style with functionality.
+            </p>
+
+            <ul class="features">
+                <li>Premium Materials</li>
+                <li>Innovative Design</li>
+                <li>Lifetime Warranty</li>
+                <li>24/7 Support</li>
+            </ul>
+
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" class="quantity-input" value="1" min="1">
+            </div>
+
+            <div class="buttons-container">
+                <button class="btn btn-primary">Buy Now</button>
+                <button class="btn btn-secondary">Complet On whatsapp</button>
+            </div>
+
+            <div class="stock-indicator">
+                Only 5 items left in stock!
+            </div>
+        </div>
+    </div>
+    <script src="detaille.js"></script>
+    
+</body>
+</html>

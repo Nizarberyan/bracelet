@@ -23,3 +23,60 @@ function updateViewers() {
 }
 
 setInterval(updateViewers, 15000);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const productsPerPage = 3;
+    const productCards = document.querySelectorAll('.product-card');
+    const totalPages = Math.ceil(productCards.length / productsPerPage);
+    let currentPage = 1;
+
+    const paginationNumbers = document.querySelector('.pagination-numbers');
+    const prevButton = document.querySelector('.pagination-btn.prev');
+    const nextButton = document.querySelector('.pagination-btn.next');
+
+    for(let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.classList.add('pagination-btn');
+        button.textContent = i;
+        if(i === 1) button.classList.add('active');
+        
+        button.addEventListener('click', () => {
+            setCurrentPage(i);
+        });
+        
+        paginationNumbers.appendChild(button);
+    }
+
+    function setCurrentPage(pageNum) {
+        currentPage = pageNum;
+        
+        document.querySelectorAll('.pagination-numbers .pagination-btn').forEach((button, index) => {
+            button.classList.toggle('active', index + 1 === currentPage);
+        });
+
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = currentPage === totalPages;
+
+        // Show/hide products
+        productCards.forEach((card, index) => {
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const endIndex = startIndex + productsPerPage;
+            
+            if(index >= startIndex && index < endIndex) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        });
+    }
+
+    prevButton.addEventListener('click', () => {
+        if(currentPage > 1) setCurrentPage(currentPage - 1);
+    });
+
+    nextButton.addEventListener('click', () => {
+        if(currentPage < totalPages) setCurrentPage(currentPage + 1);
+    });
+
+    setCurrentPage(1);
+});
