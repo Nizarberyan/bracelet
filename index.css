@@ -253,18 +253,18 @@ nav {
 }
 
 .product-btn {
-    flex: 1;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
+    flex: 1 ;
+    padding: 0.8rem ;
+    border: none ;
+    border-radius: 25px ;
+    cursor: pointer ;
+    transition: all 0.3s ease ;
+    font-weight: 500 ;
 }
 
 .product-btn:first-child {
-    background: var(--dark);
-    color: white;
+    background: var(--dark) !important;
+    color: white !important;
 }
 
 .product-btn:last-child {
