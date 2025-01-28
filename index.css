@@ -360,6 +360,33 @@ nav {
     border-color: var(--primary);
     color: white;
 }
+.price-info {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.original-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9em;
+}
+
+.promo-price {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.promo-tag {
+    background-color: #ff4444;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
 
 .products {
     padding: 2rem 5%;
