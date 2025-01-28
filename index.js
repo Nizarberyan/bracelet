@@ -25,7 +25,7 @@ function updateViewers() {
 setInterval(updateViewers, 15000);
 
 document.addEventListener('DOMContentLoaded', function() {
-    const productsPerPage = 3;
+    const productsPerPage = 6;
     const productCards = document.querySelectorAll('.product-card');
     const totalPages = Math.ceil(productCards.length / productsPerPage);
     let currentPage = 1;
@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.querySelector('.pagination-btn.prev');
     const nextButton = document.querySelector('.pagination-btn.next');
 
+    
     for(let i = 1; i <= totalPages; i++) {
         const button = document.createElement('button');
         button.classList.add('pagination-btn');
