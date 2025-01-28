@@ -267,6 +267,62 @@ nav {
         background-position: 0% 50%;
     }
 }
+.product-buttons {
+    display: flex;
+    gap: .5rem;
+}
+
+.product-btn {
+    flex: 1 ;
+    padding: 0.8rem ;
+    border: none ;
+    border-radius: 25px ;
+    cursor: pointer ;
+    transition: all 0.3s ease ;
+    font-weight: 500 ;
+    width: 150px;
+}
+
+.product-btn:first-child {
+    background: var(--dark) !important;
+    color: white !important;
+}
+
+.product-btn:last-child {
+    background: var(--primary);
+    color: white;
+}
+
+.product-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+.product-btn2 {
+    flex: 1 ;
+    padding: 0.8rem ;
+    border: none ;
+    border-radius: 25px ;
+    cursor: pointer ;
+    transition: all 0.3s ease ;
+    font-weight: 500 ;
+    width: 150px;
+    background-color: #e91e63;
+}
+
+.product-btn2:first-child {
+    background: var(--dark) !important;
+    color: white !important;
+}
+
+.product-btn2:last-child {
+    background: var(--primary) !important;
+    color: white;
+}
+
+.product-btn2:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
 
 @media (max-width: 768px) {
     .hero-content h1 {
@@ -425,7 +481,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .pagination-numbers {
