@@ -16,10 +16,11 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: var(--light);
     overflow-x: hidden;
-    background: url('img/pexels-olly-1050244.jpg') center/cover fixed no-repeat;
+    background: url('img/buy7.jpg') center/cover no-repeat;
 }
 
 nav {
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -173,7 +174,7 @@ nav {
     width: min(95%, 800px);
     margin: 2rem auto;
     padding: 3rem;
-    background: rgba(255, 255, 255, 0.92);
+   
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -334,7 +335,7 @@ nav {
         font-size: 1.8rem;
         margin-bottom: 1.2rem;
         height: 15%;
-        color: white;
+        color: rgb(255, 0, 0);
     }
 
     .order-form {
