@@ -204,8 +204,43 @@ nav {
     border-color: var(--primary);
 }
 
+.custom {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+    max-width: 500px;
+}
 
-/* Similar products section */
+.custom h1 {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 2rem; 
+    font-weight: 600; 
+    color: #333; 
+    margin-bottom: 20px; 
+}
+
+.custom a button {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--light);
+    background-color: var(--dark); 
+    border: none;
+    border-radius: 25px; 
+    padding: 10px 20px; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+.custom a button:hover {
+    background-color: var(--primary); 
+    transform: scale(1.05); 
+}
+
+.custom a button:active {
+    transform: scale(0.95);
+}
 .similar-products {
     max-width: 1200px;
     margin: 2rem auto;
@@ -500,5 +535,17 @@ nav {
 
     .buttons-container {
         flex-direction: column;
+    }
+    .custom {
+        padding: 30px;
+    }
+
+    .custom h1 {
+        font-size: 1.5rem;
+    }
+
+    .custom a button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
 }
