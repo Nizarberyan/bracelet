@@ -163,7 +163,7 @@ nav {
 .social-icons {
     position: absolute;
     top: 120px;
-    left: 95px;
+    left: 108px;
     display: flex;
     gap: 50px;
     z-index: 1000;
