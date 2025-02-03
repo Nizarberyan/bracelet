@@ -89,10 +89,10 @@ nav {
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
-    font-family: "Oleo Script", serif;
-}
+    font-size: 1.3rem;
+    font-family: "Caveat", serif;
 
+}
 .customize-btn:hover {
     background: var(--primary);
     transform: translateY(-2px);
@@ -148,6 +148,7 @@ nav {
     color: var(--dark);
     font-size: 1.2rem;
 }
+
 .hero {
     position: relative;
     height: 100vh;
@@ -159,7 +160,49 @@ nav {
     font-family: 'Fachada-Regular', sans-serif;
 
 }
+.social-icons {
+    position: absolute;
+    top: 120px;
+    left: 85px;
+    display: flex;
+    gap: 50px;
+    z-index: 1000;
+}
+.social-icons img{
+    width: 28px;
+}
 
+.social-icons a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 24px;
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    font-weight: 100;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons a span {
+    position: absolute;
+    bottom: 20px;
+    right: -35px;
+    opacity: 0;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.social-icons a:hover span {
+    opacity: 1;
+}
 .hero::before {
     content: '';
     position: absolute;
