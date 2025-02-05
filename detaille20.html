@@ -7,15 +7,164 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="detaill.css">
     <link rel="icon" type="image/png" href="img/logo.png">
+    <style>
+        :root {
+            --primary: #e91e63;
+            --secondary: #c2185b;
+            --accent: #f48fb1;
+            --dark: #212121;
+            --light: #fafafa;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .product-viewer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .main-image-container {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--accent);
+        }
+
+        .main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-container:hover .product-info {
+            transform: translateY(0);
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .thumbnail {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid var(--accent);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3);
+            border-color: var(--primary);
+        }
+
+        .thumbnail:hover img {
+            transform: scale(1.1);
+        }
+
+        .thumbnail-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(194, 24, 91, 0.9);
+            color: white;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail:hover .thumbnail-info {
+            transform: translateY(0);
+        }
+
+        .price {
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .btn {
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 
 </head>
 <body>
     <nav>
         <img src="img/logo.png" alt="Logo" class="logo">
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+           <li><a href="https://wa.me/212707858759?text=Hello%20there!">Contact</a></li>
         </ul>
                 <a href="https://wa.me/212707858759?text=Hello%20there!" target="_blank" ><button class="customize-btn">Customize Bracelet</button></a>
         <i class="fas fa-bars menu-icon"></i>
@@ -25,78 +174,92 @@
         <img src="img/logo.png" alt="Logo" class="logo">
         <i class="fas fa-times close-menu"></i>
         <ul class="mobile-nav-links">
-            <li><a href="#home">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#products">Products</a></li>
-            <li><a href="#contact">Contact</a></li>
+           <li><a href="https://wa.me/212707858759?text=Hello%20there!">Contact</a></li>
                     <a href="https://wa.me/212707858759?text=Hello%20there!" target="_blank" ><button class="customize-btn">Customize Bracelet</button></a>
         </ul>
 
     </div>
-    <div class="product-container">
-        <div class="product-image">
-            <img src="img/detaille6.jpg" alt="Premium Product">
-        </div>
 
-        <div class="product-details">
-            <h1 class="product-title">Bracelet tennis diamant</h1>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>💝 Valentine's Pack Details 💝</h1>
+        </header>
 
-            <div class="price-container">
-                <span class="current-price">159</span>
-                <span class="original-price">200DH</span>
-                <span class="discount-badge">-15%</span>
+        <div class="product-viewer">
+            <div class="main-image-container">
+                <img src="img/pack7.jpg" alt="Valentine Pack" id="mainImage" class="main-image">
+                <div class="product-info">
+                    <h2>Sweet Beginning Pack</h2>
+                    <p>Perfect for new couples! Includes romantic dinner setup, rose petals, scented candles, and more.</p>
+                    <div class="price">399DH</div>
+                    <a href="paiment.html"><button class="btn btn-primary">Buy Now</button></a>
+                </div>
             </div>
 
-            <p class="description">
-                Experience unparalleled quality with our premium product. Crafted with precision and designed for
-                excellence, this product combines style with functionality.
-            </p>
-
-            <ul class="features">
-                <li>Premium Materials</li>
-                <li>Innovative Design</li>
-                <li>Lifetime Warranty</li>
-                <li>24/7 Support</li>
-            </ul>
-
-            <div class="quantity-selector">
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" class="quantity-input" value="1" min="1">
-            </div>
-
-            <div class="buttons-container">
-                <a href="paiment.html"><button class="btn btn-primary">Buy Now</button></a>
-                <a href="https://wa.me/212707858759?text=Hello%20there!"><button class="btn btn-secondary">Complet On whatsapp</button></a>
-            </div>
-
-            <div class="stock-indicator">
-                Only 5 items left in stock!
-            </div>
-            <div class="custom">
-                <h1>Make Your Design Here</h1>
-                <a href="https://wa.me/212707858759?text=Hello%20there!">
-                    <button>Custom Design</button>
-                </a>
-            </div>
-            <div class="color-options">
-                <h3>Available Colors:</h3>
-                <div class="colors">
-                    <div class="color-option" style="background-color: #FFD700;" title="Gold"></div>
-                    <div class="color-option" style="background-color: #C0C0C0;" title="Silver"></div>
-                    <div class="color-option" style="background-color: #8B0000;" title="Red"></div>
-                    <div class="color-option" style="background-color: #000000;" title="Black"></div>
+            <div class="thumbnail-container">
+                <div class="thumbnail" onclick="updateMainImage('img/pack1.jpg', 'Ultimate Valentine Pack','399DH' )">
+                    <img src="img/pack1.jpg" alt="Sweet Beginning Pack">
+                    <div class="thumbnail-info">
+                        <p>Sweet Beginning Pack</p>
+                    </div>
+                </div>
+                <div class="thumbnail" onclick="updateMainImage('img/pack2.jpg', 'Ultimate Valentine Pack', '399DH')">
+                    <img src="img/pack2.jpg" alt="Love Birds Pack">
+                    <div class="thumbnail-info">
+                        <p>Love Birds Pack</p>
+                    </div>
+                </div>
+                <div class="thumbnail" onclick="updateMainImage('img/pack3.jpg', 'Ultimate Valentine Pack', '399DH')">
+                    <img src="img/pack3.jpg" alt="Eternal Love Pack">
+                    <div class="thumbnail-info">
+                        <p>Eternal Love Pack</p>
+                    </div>
+                </div>
+                <div class="thumbnail" onclick="updateMainImage('img/pack4.jpg', 'Ultimate Valentine Pack', '399DH')">
+                    <img src="img/pack4.jpg" alt="Romance Deluxe Pack">
+                    <div class="thumbnail-info">
+                        <p>Romance Deluxe Pack</p>
+                    </div>
+                </div>
+                <div class="thumbnail" onclick="updateMainImage('img/pack5.jpg', 'Ultimate Valentine Pack', '399DH')">
+                    <img src="img/pack5.jpg" alt="Ultimate Valentine Pack">
+                    <div class="thumbnail-info">
+                        <p>Ultimate Valentine Pack</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="similar-products">
-        <h2>Similar Products</h2>
-        <div class="similar-products-grid">
-            <img src="img/detaille2.jpg" alt="Similar Product 1">
-            <img src="img/detaille3.jpg" alt="Similar Product 2">
-            <img src="img/detaille4.jpg" alt="Similar Product 3">
-        </div>
-    </div>
-    <script src="detaille.js"></script>
-    
+
+    <script>
+        function updateMainImage(src, title, price) {
+            const mainImage = document.getElementById('mainImage');
+            const productInfo = document.querySelector('.product-info');
+            
+            mainImage.src = src;
+            productInfo.innerHTML = `
+                <h2>${title}</h2>
+                <p>${getPackDescription(title)}</p>
+                <div class="price">${price}</div>
+                <a href="paiment.html"><button class="btn btn-primary">Buy Now</button></a>
+            `;
+        }
+
+        function getPackDescription(title) {
+            const descriptions = {
+                'Sweet Beginning Pack': 'Perfect for new couples! Includes romantic dinner setup, rose petals, scented candles, and more.',
+                'Love Birds Pack': 'Perfect for outdoor romance! Includes luxury picnic basket, premium champagne, and chocolate-covered strawberries.',
+                'Eternal Love Pack': 'Capture your special moments! Includes photography session, luxury dinner, and custom love letter.',
+                'Romance Deluxe Pack': 'Ultimate relaxation for two! Includes couples spa day, gourmet dinner, and premium flowers.',
+                'Ultimate Valentine Pack': 'The complete romantic experience! Includes luxury hotel stay, private chef, and limousine service.'
+            };
+            return descriptions[title] || 'Description not available';
+        }
+    </script>
+    <script src="index.js"></script>
 </body>
 </html>
