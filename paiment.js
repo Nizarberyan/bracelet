@@ -16,13 +16,13 @@ function submitForm(event) {
     const quantity = encodeURIComponent(document.getElementById('quantity').value);
     
     const message = `🎁 New Bracelet Order%0A%0A
-👤 Name: ${name}%0A
-📍 Address: ${address}%0A
-📞 Phone: ${phone}%0A
-🔢 Quantity: ${quantity}%0A
-✨ Design Details: ${design}`;
+ Name: ${name}%0A
+ Address: ${address}%0A
+ Phone: ${phone}%0A
+ Quantity: ${quantity}%0A
+ Design Details: ${design}`;
     
-    window.open(`https://wa.me/+212611394586?text=${message}`, '_blank');
+    window.open(`https://wa.me/+212707858759?text=${message}`, '_blank');
     
     document.getElementById('braceletForm').reset();
 }
