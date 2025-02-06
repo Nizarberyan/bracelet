@@ -33,6 +33,7 @@ body {
 }
 
 nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -235,12 +236,13 @@ nav {
     text-align: center;
     padding: 0 5%;
     animation: fadeInDown 1.2s ease-out;
-    max-width: 900px;
+    max-width: 950px;
 }
 
 .hero-content h1 {
     color: #fff;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.9rem;
     text-shadow: 2px 2px 15px rgba(0,0,0,0.3);
     letter-spacing: 3px;
     background: linear-gradient(45deg, #fff, #ffbf00, #f0c3d9);
@@ -333,6 +335,142 @@ nav {
         background-position: 0% 50%;
     }
 }
+.promo-container {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    perspective: 1000px;
+  }
+
+  .pointing-hand {
+    position: absolute;
+    right: -70px;
+    top: 50%;
+    font-size: 45px;
+    animation: pointingMotion 1.5s infinite;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+  }
+
+  @keyframes pointingMotion {
+    0% { transform: translateX(0) rotate(-20deg) scale(1); }
+    50% { transform: translateX(-15px) rotate(-25deg) scale(1.1); }
+    100% { transform: translateX(0) rotate(-20deg) scale(1); }
+  }
+
+  .valentine-btn {
+    padding: 18px 35px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: var(--light);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+    animation: floatButton 3s infinite;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .promo-text {
+    position: absolute;
+    top: -30px;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    color: var(--light);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    animation: promoShine 3s infinite;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  @keyframes promoShine {
+    0% { transform: translateY(0) rotate(0deg); filter: brightness(1); }
+    50% { transform: translateY(-12px) rotate(-2deg); filter: brightness(1.2); }
+    100% { transform: translateY(0) rotate(0deg); filter: brightness(1); }
+  }
+
+  @keyframes floatButton {
+    0% { transform: translateY(0) rotateX(0deg); }
+    50% { transform: translateY(-10px) rotateX(5deg); }
+    100% { transform: translateY(0) rotateX(0deg); }
+  }
+
+  .valentine-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    transition: all 0.6s ease;
+  }
+
+  .valentine-btn:after {
+    content: '❤️';
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-53%);
+    transition: all 0.3s ease;
+  }
+
+  .valentine-btn:hover {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(194, 24, 91, 0.5);
+    padding-left: 45px;
+  }
+
+  .valentine-btn:hover:before {
+    left: 100%;
+  }
+
+  .valentine-btn:hover:after {
+    opacity: 1;
+  }
+
+  .valentine-btn:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 5px 15px rgba(194, 24, 91, 0.3);
+  }
+
+  /* Add sparkles around the button */
+  .sparkle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: sparkleAnimation 2s infinite;
+  }
+
+  .sparkle:nth-child(1) { top: -20px; left: 20%; animation-delay: 0s; }
+  .sparkle:nth-child(2) { top: 50%; right: -20px; animation-delay: 0.4s; }
+  .sparkle:nth-child(3) { bottom: -20px; left: 30%; animation-delay: 0.8s; }
+
+  @keyframes sparkleAnimation {
+    0% { transform: scale(0) rotate(0deg); opacity: 0; }
+    50% { transform: scale(1) rotate(180deg); opacity: 1; }
+    100% { transform: scale(0) rotate(360deg); opacity: 0; }
+  }
 .product-buttons {
     display: flex;
     gap: .5rem;
