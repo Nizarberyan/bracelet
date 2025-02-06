@@ -15,7 +15,7 @@ function submitForm(event) {
     const design = encodeURIComponent(document.getElementById('design').value);
     const quantity = encodeURIComponent(document.getElementById('quantity').value);
     
-    const message = `🎁 New Bracelet Order%0A%0A
+    const message = ` New Bracelet Order%0A%0A
  Name: ${name}%0A
  Address: ${address}%0A
  Phone: ${phone}%0A
