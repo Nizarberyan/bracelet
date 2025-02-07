@@ -6,6 +6,9 @@ function updateQuantity(change) {
     }
 }
 
+
+
+
 function submitForm(event) {
     event.preventDefault();
     
@@ -26,3 +29,15 @@ function submitForm(event) {
     
     document.getElementById('braceletForm').reset();
 }
+const menuIcon = document.querySelector('.menu-icon');
+const closeMenu = document.querySelector('.close-menu');
+const mobileMenu = document.querySelector('.mobile-menu');
+const viewers = document.querySelectorAll('.viewers span');
+menuIcon.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});

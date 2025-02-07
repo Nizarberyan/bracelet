@@ -648,6 +648,7 @@ nav {
 .product-buttons {
     display: flex;
     gap: 1rem;
+    width: 80%;
 }
 
 .product-btn {
