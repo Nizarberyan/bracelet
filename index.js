@@ -1,3 +1,7 @@
+// Optional: Add any interactive behavior if needed
+document.querySelector('.shipping-panel').addEventListener('click', function() {
+    alert('استمتع بالتوصيل المجاني و الدفع حتى تاخد المنتج');
+});
 const menuIcon = document.querySelector('.menu-icon');
 const closeMenu = document.querySelector('.close-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
