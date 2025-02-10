@@ -25,7 +25,7 @@ function submitForm(event) {
  Quantity: ${quantity}%0A
  Design Details: ${design}`;
     
-    window.open(`https://wa.me/+212707858759?text=${message}`, '_blank');
+    window.open(`https://wa.me/+212639552918?text=${message}`, '_blank');
     
     document.getElementById('braceletForm').reset();
 }
